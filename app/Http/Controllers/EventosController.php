@@ -17,6 +17,11 @@ class EventosController extends Controller
         //
     }
 
+    public function home()
+    {
+        return view('layout.home');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
