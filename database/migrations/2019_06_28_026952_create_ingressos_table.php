@@ -22,6 +22,7 @@ class CreateIngressosTable extends Migration
             $table->bigInteger('evento_id')->unsigned()->index()->nullable();
             $table->foreign('evento_id')->references("id")->on("eventos");
         });
+
     }
 
     /**

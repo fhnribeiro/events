@@ -21,6 +21,15 @@ class CreateUsuariosTable extends Migration
             $table->string("senha");
             $table->tinyInteger("admin");
         });
+
+        DB::table('usuarios')->insert(
+            array(
+                'nome' => 'admin',
+                'login' => 'admin',
+                'senha' => 'admin',
+                'admin' => 1
+            )
+        );
     }
 
     /**
