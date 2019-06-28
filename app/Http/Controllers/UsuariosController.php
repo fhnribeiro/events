@@ -2,10 +2,10 @@
 
 namespace eventos\Http\Controllers;
 
-use eventos\Cliente;
+use eventos\Usuario;
 use Illuminate\Http\Request;
 
-class ClientesController extends Controller
+class UsuariosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ClientesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \eventos\Cliente  $cliente
+     * @param  \eventos\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function show(Cliente $cliente)
+    public function show(Usuario $usuario)
     {
         //
     }
@@ -52,10 +52,10 @@ class ClientesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \eventos\Cliente  $cliente
+     * @param  \eventos\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cliente $cliente)
+    public function edit(Usuario $usuario)
     {
         //
     }
@@ -64,10 +64,10 @@ class ClientesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \eventos\Cliente  $cliente
+     * @param  \eventos\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, Usuario $usuario)
     {
         //
     }
@@ -75,10 +75,10 @@ class ClientesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \eventos\Cliente  $cliente
+     * @param  \eventos\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(Usuario $usuario)
     {
         //
     }

@@ -17,8 +17,8 @@ class CreateIngressosTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string("lugar");
-            $table->bigInteger('cliente_id')->unsigned()->index()->nullable();
-            $table->foreign('cliente_id')->references("id")->on("clientes");
+            $table->bigInteger('usuario_id')->unsigned()->index()->nullable();
+            $table->foreign('usuario_id')->references("id")->on("usuarios");
             $table->bigInteger('evento_id')->unsigned()->index()->nullable();
             $table->foreign('evento_id')->references("id")->on("eventos");
         });
