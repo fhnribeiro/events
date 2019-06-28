@@ -1,0 +1,10 @@
+<?php
+
+namespace eventos;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Categoria extends Model
+{
+    //
+}
