@@ -17,14 +17,9 @@
 <div class="flex-center position-ref full-height">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{route('home')}}">Home</a>
+            <a href="{{route('categorias.index')}}" class="nav-item nav">Categorias</a>
+            <a href="{{route('eventos.index')}}" class="nav-item">Eventos</a>
         </div>
-        <ul class="nav navbar navbar-right">
-            <li>
-                <a href="{{route('categorias.index')}}">Categorias</a>
-                <a href="{{route('eventos.index')}}">Eventos</a>
-            </li>
-        </ul>
     </div>
     <div class="content">
         @yield('content')
