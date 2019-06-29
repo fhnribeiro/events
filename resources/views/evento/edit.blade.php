@@ -1,16 +1,16 @@
 @extends('layout.master')
 @section('content')
-    <h1>Editar Resposável</h1>
-    <p class="lead">Edite o responsável a seguir:</p>
+    <h1>{{$evento->nome}}</h1>
     <hr>
-    <form action="{{route('categoria',$sponsor)}}" method="post">
-        @csrf
-        @method('PUT')
-        <label for="name">Nome:</label>
-        <input type="text" name="name" id="name" value="{{$sponsor->name}}"><br>
-        <label for="role">Função:</label>
-        <input type="text" name="role" id="role" value="{{$sponsor->role}}"><br>
-        <br>
-        <input type="submit" value="Alterar" class="btn btn-primary">
-    </form>
+    <p>
+        {{--        <a href="{{route('categorias.index')}}" class="btn btn-info">Todos as categorias</a>--}}
+        <a href="{{route('eventos.edit',$evento)}}" class="btn btn-primary">Editar evento</a>
+    </p>
+    <div class="pull-rigth">
+        <form action="{{route('eventos.destroy',$evento)}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </form>
+    </div>
 @endsection

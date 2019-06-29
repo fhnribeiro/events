@@ -2,6 +2,7 @@
 
 namespace eventos\Http\Controllers;
 
+use eventos\Categoria;
 use eventos\Evento;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class EventosController extends Controller
     public function index()
     {
         $eventos = Evento::all();
-        return view('eventos.index')->withEventos($eventos);
+        return view('evento.index')->withEventos($eventos);
     }
 
     public function home()
@@ -30,7 +31,7 @@ class EventosController extends Controller
      */
     public function create()
     {
-        //
+        return view('evento.create');
     }
 
     /**
@@ -41,7 +42,10 @@ class EventosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Evento::create($request->all());
+
+        return redirect()->route('eventos.index');
+
     }
 
     /**
