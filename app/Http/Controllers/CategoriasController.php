@@ -14,7 +14,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
