@@ -1,17 +1,16 @@
 @extends('layout.master')
 @section('content')
-    <h1>{{$sponsor->name}}</h1>
-    <p class="lead">{{$sponsor->role}}</p>
+    <h1>{{$categoria->nome}}</h1>
     <hr>
     <p>
-        <a href="{{route('categoria')}}" class="btn btn-info">Todos os Responsáveis</a>
-        <a href="{{route('sponsors.edit',$sponsor)}}" class="btn btn-primary">Editar Responsável</a>
+{{--        <a href="{{route('categorias.index')}}" class="btn btn-info">Todos as categorias</a>--}}
+        <a href="{{route('categorias.edit',$categoria)}}" class="btn btn-primary">Editar categoria</a>
     </p>
     <div class="pull-rigth">
-        <form action="{{route('categoria',$sponsor)}}" method="post">
+        <form action="{{route('categorias.destroy',$categoria)}}" method="post">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">Deletar Resposável</button>
+            <button type="submit" class="btn btn-danger">Deletar</button>
         </form>
     </div>
 @endsection
