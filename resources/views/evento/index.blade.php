@@ -2,7 +2,7 @@
 @section('content')
     <h1>Lista de Eventos</h1>
     <p class="lead">
-        <a href="{{route('eventos.create')}}">Adicionar novo?</a>
+        <a href="{{route('eventos.create')}}" class="btn btn-primary">Adicionar novo?</a>
     </p>
     <div class="p-3">
         <ul class="list-group">
