@@ -1,17 +1,20 @@
 @extends('layout.master')
 @section('content')
-    <h1>{{$sponsor->name}}</h1>
-    <p class="lead">{{$sponsor->role}}</p>
-    <hr>
-    <p>
-        <a href="{{route('categoria')}}" class="btn btn-info">Todos os Responsáveis</a>
-        <a href="{{route('sponsors.edit',$sponsor)}}" class="btn btn-primary">Editar Responsável</a>
-    </p>
-    <div class="pull-rigth">
-        <form action="{{route('categoria',$sponsor)}}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Deletar Resposável</button>
-        </form>
+
+    <div class="p-2">
+        <div class="card w-75">
+            <div class="card-header">
+                {{$evento->nome}} -
+                {{$evento->categoria->nome}}
+            </div>
+            <div class="card-body">
+                <div>
+                    Data: {{$evento->data}}
+                </div>
+                <div>
+                    Total de ingressos: {{$evento->totalIngressos}}
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

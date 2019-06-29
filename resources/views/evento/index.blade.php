@@ -4,13 +4,18 @@
     <p class="lead">
         <a href="{{route('eventos.create')}}">Adicionar novo?</a>
     </p>
-    <ul>
+    <div class="p-3">
+        <ul class="list-group">
         @forelse($eventos as $evento)
-            <li><a href="{{route('eventos.show',$evento)}}">
+            <li class="list-group-item">
+                <a href="{{route('eventos.show',$evento)}}">
                     {{$evento->nome}}
-                </a></li>
+                </a>
+                <a href="{{route('eventos.edit',$evento)}}" class="btn btn-primary float-right">Editar</a>
+            </li>
         @empty
-            <li>Nenhum registro</li>
+            <li class="list-group-item disabled">Nenhum registro</li>
         @endforelse
-    </ul>
+        </ul>
+    </div>
 @endsection

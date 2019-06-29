@@ -16,6 +16,7 @@ class EventosController extends Controller
     public function index()
     {
         $eventos = Evento::all();
+
         return view('evento.index')->withEventos($eventos);
     }
 
@@ -31,7 +32,8 @@ class EventosController extends Controller
      */
     public function create()
     {
-        return view('evento.create');
+        $categorias = Categoria::all();
+        return view('evento.create')->withCategorias($categorias);
     }
 
     /**
@@ -42,7 +44,8 @@ class EventosController extends Controller
      */
     public function store(Request $request)
     {
-        Evento::create($request->all());
+        $evento = Evento::create($request->all());
+        $evento->categoria()->associate($request->get("categoria"))->save();
 
         return redirect()->route('eventos.index');
 
@@ -56,7 +59,7 @@ class EventosController extends Controller
      */
     public function show(Evento $evento)
     {
-        //
+        return view('evento.show')->withEvento($evento);
     }
 
     /**
@@ -67,7 +70,8 @@ class EventosController extends Controller
      */
     public function edit(Evento $evento)
     {
-        //
+        $categorias = Categoria::all();
+        return view('evento.edit')->withCategorias($categorias)->withEvento($evento);
     }
 
     /**
@@ -79,7 +83,11 @@ class EventosController extends Controller
      */
     public function update(Request $request, Evento $evento)
     {
-        //
+        $evento->fill($request->all())->save();
+
+        $evento->categoria()->associate($request->get("categoria"))->save();
+
+        return redirect()->route('eventos.index');
     }
 
     /**

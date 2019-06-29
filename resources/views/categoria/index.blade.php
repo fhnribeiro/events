@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    <h1>Lista de Responsáveis</h1>
+    <h1>Lista de categorias</h1>
     <p class="lead">
         <a href="{{route('categorias.create')}}" class="btn btn-primary">Adicionar novo?</a>
     </p>

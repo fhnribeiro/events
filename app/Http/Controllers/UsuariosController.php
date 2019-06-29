@@ -24,7 +24,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        //
+        return view('usuario.create');
     }
 
     /**
@@ -35,7 +35,12 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario=new Usuario();
+        $usuario->fill($request->all());
+        $usuario->setAttribute("admin",0);
+        $usuario->save();
+
+        return redirect()->route('eventos.index');
     }
 
     /**
@@ -46,7 +51,8 @@ class UsuariosController extends Controller
      */
     public function show(Usuario $usuario)
     {
-        //
+
+        return view('usuario.show')->withUsuario($usuario);
     }
 
     /**
@@ -57,7 +63,7 @@ class UsuariosController extends Controller
      */
     public function edit(Usuario $usuario)
     {
-        //
+        return view('usuario.edit')->withUsuario($usuario);
     }
 
     /**
@@ -69,7 +75,8 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, Usuario $usuario)
     {
-        //
+        $usuario->fill($request->all())->save();
+        return redirect()->route('usuarios.show')->withUsuario($usuario);
     }
 
     /**
@@ -80,6 +87,16 @@ class UsuariosController extends Controller
      */
     public function destroy(Usuario $usuario)
     {
-        //
+
+    }
+
+    public function login(Request $request){
+
+        return view('usuario.login');
+    }
+
+    public function logar(Request $request){
+        $user = DB::table('usuarios')->where('login', $request->get("login"))->first();
+        return view('usuario.show')->withUsuario($user);
     }
 }
