@@ -2,12 +2,12 @@
 @section('content')
     <h1>Lista de Responsáveis</h1>
     <p class="lead">
-        <a href="{{route('categoria')}}">Adicionar novo?</a>
+        <a href="{{route('categorias.create')}}">Adicionar novo?</a>
     </p>
     <ul>
-        @forelse($sponsors as $sponsor)
-            <li><a href="{{route('sponsors.show',$sponsor)}}">
-                    {{$sponsor->name}}
+        @forelse($categorias as $categoria)
+            <li><a href="{{route('categorias.show',$categoria)}}">
+                    {{$categoria->nome}}
                 </a></li>
         @empty
             <li>Nenhum registro</li>
